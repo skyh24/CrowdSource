@@ -258,7 +258,7 @@ contract CrowdSource is Ownable {
         
     }
 
-
+    // 0号任务，开始先打钱，然后锁定1号任务的资金，最后从锁定的资金转出，保证下个任务资金足够
     function _payJob(uint256 _jobIndex, uint _taskIndex) private {
         // calculate refer amount
         uint256 amount = jobList[_jobIndex].totalPayment / jobList[_jobIndex].totalTasks;
@@ -270,11 +270,13 @@ contract CrowdSource is Ownable {
             require(companies[jobList[_jobIndex].company].balance >= amount, "Insufficient balance");
             companies[jobList[_jobIndex].company].balance -= amount;
             if (_taskIndex == 0) {
+                // 开始先打钱
                 require(companies[jobList[_jobIndex].company].balance >= amount, "Insufficient balance");
                 companies[jobList[_jobIndex].company].balance -= amount;
                 companies[jobList[_jobIndex].company].lockedBalance += amount;
             }
         } else {
+
             require(companies[jobList[_jobIndex].company].lockedBalance >= amount, "Insufficient lock balance");
             companies[jobList[_jobIndex].company].lockedBalance -= amount;
         }
