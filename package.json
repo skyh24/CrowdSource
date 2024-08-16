@@ -8,11 +8,20 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^5.16.7",
     "@rainbow-me/rainbowkit": "^2.1.4",
     "@tanstack/react-query": "^5.51.11",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.427.0",
     "next": "^14.2.3",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
+    "styled-components": "^6.1.12",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss-animate": "^1.0.7",
     "viem": "2.17.0",
     "wagmi": "^2.12.0"
   },
