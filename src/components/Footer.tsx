@@ -1,6 +1,6 @@
-import { Button } from "@mui/material";
 import { useRouter } from "next/router";
 import styled from "styled-components";
+import { Button } from "./Button";
 
 const Container = styled.div`
   width: calc(100% - 48px);
@@ -17,13 +17,11 @@ export const Footer = () => {
   return (
     <Container>
       <Button
-        variant="outlined"
+        type="create"
         onClick={() => {
           router.push("create");
         }}
-      >
-        Create
-      </Button>
+      />
     </Container>
   );
 };

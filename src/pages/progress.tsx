@@ -1,14 +1,14 @@
 import Layout from "../components/Layout";
 import { Footer } from "../components/Footer";
-import { TaskDetail } from "../components/TaskDetail";
+import TaskProgress from "../components/TaskProgress";
 
-const TaskPage = () => {
+const ProgressPage = () => {
   return (
     <Layout>
-      <TaskDetail />
+      <TaskProgress />
       <Footer />
     </Layout>
   );
 };
 
-export default TaskPage;
+export default ProgressPage;

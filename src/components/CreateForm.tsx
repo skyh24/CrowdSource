@@ -7,6 +7,8 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import styled from "styled-components";
+import Input from "./Input";
+import Textarea from "./Textarea";
 
 const Container = styled.div`
   margin-top: 100px;
@@ -27,10 +29,8 @@ const Container = styled.div`
     width: 50%;
     height: 100%;
     box-sizing: border-box;
-    background-color: #9898a6;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 24px 100px;
+
     display: flex;
     flex-direction: column;
 
@@ -55,34 +55,11 @@ export const CreateForm = () => {
       <div className="title">Create a task</div>
       <div className="form">
         <div>
-          <span>Name: </span>
-          <TextField required id="standard-basic" variant="standard" />
+          <span>Project Name: </span>
+          <Input placeholder="1" />
         </div>
 
-        {/* 
-        <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Type</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={type}
-            label="Type"
-            onChange={handleTypeChange}
-          >
-            <MenuItem value={"Code"}>{"Code"}</MenuItem>
-            <MenuItem value={"Code"}>{"Code"}</MenuItem>
-            <MenuItem value={"Code"}>{"Code"}</MenuItem>
-            <MenuItem value={"Code"}>{"Code"}</MenuItem>
-          </Select>
-        </FormControl> */}
-        <TextField
-          required
-          id="standard-multiline-flexible"
-          label="Description"
-          multiline
-          maxRows={24}
-          variant="standard"
-        />
+        <Textarea placeholder="11" />
       </div>
     </Container>
   );
