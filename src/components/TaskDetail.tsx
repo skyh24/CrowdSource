@@ -23,6 +23,7 @@ const Container = styled.div`
     & > .icon {
       width: 42px;
       height: 42px;
+      border-radius: 5px;
       background-color: #d9d9d9;
       display: flex;
       align-items: center;
@@ -91,8 +92,8 @@ export const TaskDetail = () => {
       <div className="info">
         <div className="header">
           <div className="avatar" onClick={() => router.push("mine")}>
-            <Avatar src="/avatar/Coooder.jpg" sx={{ width: 72, height: 72 }} />
-            <span>Coooder</span>
+            <Avatar src="/avatar/Ming.jpg" sx={{ width: 72, height: 72 }} />
+            <span>Ming</span>
           </div>
 
           <span>2024.8.17 在线</span>

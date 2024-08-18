@@ -21,7 +21,7 @@ export const TaskButtons = () => {
           router.push("progress");
         }}
       />
-      <Button type={"Save"} onClick={() => {}} />
+
       <Button type={"Recommend"} onClick={() => {}} />
     </Container>
   );

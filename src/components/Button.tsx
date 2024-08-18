@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Container = styled.div`
+const Container = styled.div<{ $color?: string }>`
   width: max-content;
   padding: 8px 24px;
   display: flex;
@@ -12,7 +12,7 @@ const Container = styled.div`
   gap: 0px;
   opacity: 0px;
   cursor: pointer;
-  background-color: #d9d9d9;
+  background-color: ${({ $color }) => $color};
 
   &:hover {
     background-color: #d0cccc;
@@ -22,9 +22,18 @@ const Container = styled.div`
 
 interface ButtonProps {
   type: string;
+  color?: string;
   onClick: () => void;
 }
 
-export const Button: React.FC<ButtonProps> = ({ type, onClick }) => {
-  return <Container onClick={onClick}>{type}</Container>;
+export const Button: React.FC<ButtonProps> = ({
+  type,
+  onClick,
+  color = "#d9d9d9",
+}) => {
+  return (
+    <Container $color={color} onClick={onClick}>
+      {type}
+    </Container>
+  );
 };

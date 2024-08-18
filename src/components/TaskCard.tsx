@@ -63,14 +63,33 @@ interface TaskCardProps {
   name: string;
   description: string;
   tags: number[];
+  author: number;
 }
 
 export const TaskCard: React.FC<TaskCardProps> = ({
   name,
   description,
   tags,
+  author,
 }) => {
   const router = useRouter();
+
+  const avatarList = [
+    {
+      avatar: "/avatar/Coooder.jpg",
+      name: "Coooder",
+    },
+    {
+      avatar: "/avatar/Ming.jpg",
+      name: "Ming",
+    },
+    {
+      avatar: "/avatar/Haohao.jpg",
+      name: "Haohao",
+    },
+  ];
+
+  const selectedAvatar = avatarList[author];
 
   return (
     <Container onClick={() => router.push("task")}>
@@ -86,9 +105,8 @@ export const TaskCard: React.FC<TaskCardProps> = ({
           })}
         </div>
         <div className="avatar">
-          <Avatar src="/avatar/Coooder.jpg" />
-
-          <span>Coooder</span>
+          <Avatar src={selectedAvatar.avatar} />
+          <span>{selectedAvatar.name}</span>
         </div>
       </div>
     </Container>

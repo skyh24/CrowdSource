@@ -46,6 +46,8 @@ export const Tag: React.FC<TagProps> = ({ index }) => {
     case "Series A Funding":
     case "Successful Crowdfunding":
     case "Concept Stage":
+      color = "#9ca2a3";
+      break;
     case "Prototype Development":
     case "MVP Completion":
     case "Public Beta":
